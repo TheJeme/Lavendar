@@ -1,4 +1,6 @@
 import React from "react";
+import TimePicker from "react-time-picker";
+
 import {
   format,
   startOfWeek,
@@ -17,6 +19,7 @@ class Calendar extends React.Component {
     currentMonth: new Date(),
     selectedDate: new Date(),
     showDay: false,
+    showCreateEvent: false,
   };
 
   renderHeader() {
@@ -39,20 +42,28 @@ class Calendar extends React.Component {
     );
   }
 
-  renderDay() {
-    const { selectedDate } = this.state;
+  renderCreateEvent() {
     return (
-      <div className="header row flex-middle">
-        <div className="col col-start">
-          <div className="icon" onClick={this.onBackClick}>
-            expand_less
-          </div>
-        </div>
+      <>
+        <div className="col col-start"></div>
         <div className="col col-center">
-          <span>{selectedDate.toLocaleDateString()}</span>
+          <div>New Event</div>
+          <br />
+          <div>
+            Name <input type="text" maxLength={45} />
+          </div>
+          <br />
+          <div>
+            Time{" "}
+            <TimePicker clearIcon={null} clockIcon={null} disableClock={true} />
+          </div>
+          <br />
+          <button className="btn">Create</button>
         </div>
-        <div className="col col-end" onClick={this.nextMonth}></div>
-      </div>
+        <div className="col col-end" onClick={this.nextMonth}>
+          <div className="icon">close</div>
+        </div>
+      </>
     );
   }
 
@@ -66,7 +77,7 @@ class Calendar extends React.Component {
             <span>&emsp;18.30</span>
           </div>
           <div className="col col-center">
-            <span>asdasdsadsa</span>
+            <span>dasdsa</span>
           </div>
           <div className="col col-end" onClick={this.nextMonth}>
             <div className="icon">close</div>
@@ -74,15 +85,37 @@ class Calendar extends React.Component {
         </div>
       );
     }
-
     return (
       <div>
         {events}
         <div className="header row flex-middle">
-          <div className="col col-center">
-            <div className="icon">add</div>
+          {this.state.showCreateEvent ? (
+            this.renderCreateEvent()
+          ) : (
+            <div className="col col-center">
+              <div onClick={this.showCreateEventForm} className="icon">
+                add
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  renderDay() {
+    const { selectedDate } = this.state;
+    return (
+      <div className="header row flex-middle">
+        <div className="col col-start">
+          <div className="icon" onClick={this.onBackClick}>
+            expand_less
           </div>
         </div>
+        <div className="col col-center">
+          <span>{selectedDate.toLocaleDateString()}</span>
+        </div>
+        <div className="col col-end" onClick={this.nextMonth}></div>
       </div>
     );
   }
@@ -182,6 +215,12 @@ class Calendar extends React.Component {
   prevMonth = () => {
     this.setState({
       currentMonth: subMonths(this.state.currentMonth, 1),
+    });
+  };
+
+  showCreateEventForm = () => {
+    this.setState({
+      showCreateEvent: true,
     });
   };
 

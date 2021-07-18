@@ -1,0 +1,11 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json 
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpOTIiLCJpZCI6IjYwZjFlNzZhYTI0ODZhYTA5MGVhODE1OCIsImlhdCI6MTYyNjQ2NzM0M30.8MEEM8vzSXwDlyDw_wLGFzx_76SCJB1mYI1Wan46zLQ
+
+{
+  "title": "test123r45",
+  "author": "wwwb4",
+  "url": "url",
+  "likes": "76", 
+  "userId": "60f15c79f232cabc7c51618f"
+}
