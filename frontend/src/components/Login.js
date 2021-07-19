@@ -6,7 +6,7 @@ const Login = () => {
       <div className="header row flex-middle">
         <div className="col col-center">
           <div>
-            Username <input type="text" />
+            Email <input type="email" />
           </div>
           <br />
           <div>

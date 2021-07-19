@@ -6,7 +6,7 @@ import Auth from "./components/Auth";
 import "./App.css";
 
 const App = () => {
-  const isLoggedIn = true;
+  const isLoggedIn = false;
   return (
     <div className="App">
       <header>
@@ -15,6 +15,7 @@ const App = () => {
           <span>
             Laven<b>der</b>
           </span>
+          <button className="logout text-btn">Logout</button>
         </div>
       </header>
       <main>{isLoggedIn ? <Calendar /> : <Auth />}</main>

@@ -61,6 +61,13 @@ header #logo .icon {
   padding-right: 0.25em;
 }
 
+.logout {
+  position: absolute;
+  color: var(--main-color);
+  right: 1.3em;
+  top: 1.3em;
+}
+
 main {
   display: block;
   margin: 0 auto;
