@@ -1,0 +1,4 @@
+päivä - tunnit - mitä tein
+17.7 - 2 - suunnittelin aiheen ja tein suunnitelmat miten toteutan sovellukseni.
+18.7 - 8 - suunnittelin frontendiä ja aloitin tekemään sitä hyvin.
+19.7 - -

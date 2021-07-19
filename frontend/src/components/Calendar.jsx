@@ -47,8 +47,6 @@ class Calendar extends React.Component {
       <>
         <div className="col col-start"></div>
         <div className="col col-center">
-          <div>New Event</div>
-          <br />
           <div>
             Name <input type="text" maxLength={45} />
           </div>

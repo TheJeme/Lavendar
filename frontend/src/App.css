@@ -24,8 +24,8 @@
   --text-color: #777;
   --text-color-light: #999;
   --border-color: #eee;
-  --bg-color: #f9f9f9;
-  --bg-disabled-color: #f2f2f2;
+  --bg-color: #f1f1f1;
+  --bg-disabled-color: #e4e4e4;
   --neutral-color: #fff;
 }
 
@@ -204,10 +204,8 @@ main {
   letter-spacing: -0.07em;
 }
 
-.calendar .body .cell:hover .bg,
-.calendar .body .selected .bg {
-  opacity: 0.05;
-  transition: 0.5s ease-in;
+.calendar .body .cell:hover .bg {
+  opacity: 0.2;
 }
 
 .calendar .body .col {
