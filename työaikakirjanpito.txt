@@ -1,4 +1,5 @@
 päivä - tunnit - mitä tein
-17.7 - 2 - suunnittelin aiheen ja tein suunnitelmat miten toteutan sovellukseni.
-18.7 - 8 - suunnittelin frontendiä ja aloitin tekemään sitä hyvin.
-19.7 - - Frontend (css, favicon, manifest, index.html)
+16.7 - 2 - suunnittelin aiheen ja tein suunnitelmat miten toteutan sovellukseni.
+17.7 - 2 - Suunnittelin frontendiä ja aloitin tekemään sitä.
+18.7 - 8 - Jatkoin paljon frontendiä.
+19.7 - 4 - Frontend (css, favicon, manifest, index.html)
