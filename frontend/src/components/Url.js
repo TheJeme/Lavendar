@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 
 const Register = () => {
+  const [LoginID, setLoginID] = useState("");
   return (
     <div>
       <div className="header row flex-middle">
         <div className="col col-center">
           <div>
-            Existing ID <input type="text" />
+            Existing ID{" "}
+            <input
+              type="text"
+              name="LoginID"
+              value={LoginID}
+              onChange={(e) => setLoginID(e.target.value)}
+            />
           </div>
           <br />
           <div className="col col-center">
