@@ -69,7 +69,9 @@ const Register = (props) => {
               Register
             </button>
           </div>
-          {badEntryMessage ? <h6>{badEntryMessage}</h6> : null}
+          {badEntryMessage ? (
+            <h6 className="entry-text">{badEntryMessage}</h6>
+          ) : null}
         </div>
       </div>
     </div>

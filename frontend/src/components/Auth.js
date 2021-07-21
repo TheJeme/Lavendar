@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Login from "./Login";
 import Register from "./Register";
-import Url from "./Url";
+import Id from "./Id";
 
 const Auth = (props) => {
   const [authState, setAuthState] = useState("login");
@@ -28,10 +28,10 @@ const Auth = (props) => {
         </div>
         <div className="col col-center">
           <span
-            onClick={() => setAuthState("url")}
-            className={`text-btn ${authState === "url" ? "active" : ""}`}
+            onClick={() => setAuthState("id")}
+            className={`text-btn ${authState === "id" ? "active" : ""}`}
           >
-            URL
+            ID
           </span>
         </div>
       </div>
@@ -40,7 +40,7 @@ const Auth = (props) => {
       ) : authState === "register" ? (
         <Register setIsLoggedIn={props.setIsLoggedIn} />
       ) : (
-        <Url setIsLoggedIn={props.setIsLoggedIn} />
+        <Id setIsLoggedIn={props.setIsLoggedIn} />
       )}
     </div>
   );

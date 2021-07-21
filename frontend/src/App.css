@@ -288,3 +288,7 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
   box-shadow: 0 0 0 30px white inset !important;
 }
+
+.entry-text {
+  margin-bottom: 0;
+}

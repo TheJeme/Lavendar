@@ -60,7 +60,9 @@ const Login = (props) => {
               Log in
             </button>
           </div>
-          {showBadEntry ? <h6>Email or password is wrong</h6> : null}
+          {showBadEntry ? (
+            <h6 className="entry-text">Email or password is wrong</h6>
+          ) : null}
         </div>
       </div>
     </div>
