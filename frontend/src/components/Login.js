@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showBadEntry, setShowBadEntry] = useState(false);
-
   const loginUser = () => {
     axios
       .post("/api/login", {
@@ -13,11 +12,13 @@ const Login = () => {
         password: `${password}`,
       })
       .then((res) => {
-        localStorage.setItem("jwt_token", res.data.token);
         setEmail("");
         setPassword("");
+        localStorage.setItem("jwt_token", res.data.token);
+        props.setIsLoggedIn();
       })
       .catch((err) => {
+        console.log(err);
         setEmail("");
         setPassword("");
         setShowBadEntry(true);

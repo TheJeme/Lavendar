@@ -4,7 +4,7 @@ import Login from "./Login";
 import Register from "./Register";
 import Url from "./Url";
 
-const Auth = () => {
+const Auth = (props) => {
   const [authState, setAuthState] = useState("login");
   return (
     <div className="calendar">
@@ -35,7 +35,7 @@ const Auth = () => {
         </div>
       </div>
       {authState === "login" ? (
-        <Login />
+        <Login setIsLoggedIn={props.setIsLoggedIn} />
       ) : authState === "register" ? (
         <Register />
       ) : (

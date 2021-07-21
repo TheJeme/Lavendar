@@ -7,14 +7,23 @@ import "./App.css";
 
 axios.defaults.baseURL = "http://localhost:3003";
 
+window.onbeforeunload = () => {
+  localStorage.removeItem("jwt_token");
+};
+
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem("jwt_token")) {
-      setLoggedIn(true);
+      setIsLoggedIn(true);
     }
-  }, []);
+  }, [isLoggedIn]);
+
+  const logout = () => {
+    localStorage.removeItem("jwt_token");
+    setIsLoggedIn(false);
+  };
 
   return (
     <div className="App">
@@ -25,16 +34,15 @@ const App = () => {
             Laven<b>der</b>
           </span>
           {isLoggedIn ? (
-            <button
-              onClick={() => setIsLoggedIn(false)}
-              className="logout text-btn"
-            >
+            <button onClick={() => logout()} className="logout text-btn">
               Logout
             </button>
           ) : null}
         </div>
       </header>
-      <main>{isLoggedIn ? <Calendar /> : <Auth />}</main>
+      <main>
+        {isLoggedIn ? <Calendar /> : <Auth setIsLoggedIn={setIsLoggedIn} />}
+      </main>
     </div>
   );
 };
