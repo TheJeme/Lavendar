@@ -4,4 +4,4 @@ päivä - tunnit - mitä tein
 18.7 - 8 - Jatkoin paljon frontendiä.
 19.7 - 4 - Frontend (css, favicon, manifest, index.html)
 20.7 - 4 - Frontend (Kalenteri UI)
-21.7 - 4 - Frontend (Kalenteri UI jatkettu, Login, Register, Backend)
+21.7 - 8 - Frontend (Kalenteri UI jatkettu, Login, Register), Backend (Login, Register)
