@@ -28,7 +28,7 @@ const Register = () => {
               Load
             </button>
           </div>
-          {showBadEntry ? <h6>ID is invalid.</h6> : null}
+          {showBadEntry ? <h6>ID is invalid</h6> : null}
         </div>
       </div>
       <div className="header row flex-middle">
