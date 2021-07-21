@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -6,9 +7,21 @@ const Login = () => {
   const [showBadEntry, setShowBadEntry] = useState(false);
 
   const loginUser = () => {
-    setEmail("");
-    setPassword("");
-    setShowBadEntry(true);
+    axios
+      .post("/api/login", {
+        email: `${email}`,
+        password: `${password}`,
+      })
+      .then((res) => {
+        localStorage.setItem("jwt_token", res.data.token);
+        setEmail("");
+        setPassword("");
+      })
+      .catch((err) => {
+        setEmail("");
+        setPassword("");
+        setShowBadEntry(true);
+      });
   };
 
   return (

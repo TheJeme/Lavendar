@@ -6,7 +6,7 @@ require("express-async-errors");
 const cors = require("cors");
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
-const blogsRouter = require("./controllers/blogs");
+const blogsRouter = require("./controllers/events");
 const usersRouter = require("./controllers/users");
 const loginRouter = require("./controllers/login");
 
@@ -31,13 +31,8 @@ app.use(middleware.requestLogger);
 app.use(middleware.tokenExtractor);
 
 app.use("/api/users", usersRouter);
-app.use("/api/blogs", blogsRouter);
+app.use("/api/events", blogsRouter);
 app.use("/api/login", loginRouter);
-
-if (process.env.NODE_ENV === "test") {
-  const testingRouter = require("./controllers/testing");
-  app.use("/api/testing", testingRouter);
-}
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import Calendar from "./components/Calendar";
 import Auth from "./components/Auth";
-
 import "./App.css";
+
+axios.defaults.baseURL = "http://localhost:3003";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem("jwt_token")) {
+      setLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div className="App">
       <header>
