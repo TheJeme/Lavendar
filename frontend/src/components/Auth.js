@@ -6,6 +6,7 @@ import Url from "./Url";
 
 const Auth = (props) => {
   const [authState, setAuthState] = useState("login");
+
   return (
     <div className="calendar">
       <div className="header row flex-middle">
@@ -37,9 +38,9 @@ const Auth = (props) => {
       {authState === "login" ? (
         <Login setIsLoggedIn={props.setIsLoggedIn} />
       ) : authState === "register" ? (
-        <Register />
+        <Register setIsLoggedIn={props.setIsLoggedIn} />
       ) : (
-        <Url />
+        <Url setIsLoggedIn={props.setIsLoggedIn} />
       )}
     </div>
   );

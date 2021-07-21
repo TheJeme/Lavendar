@@ -1,16 +1,41 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const Register = () => {
+const Register = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showBadEntry, setShowBadEntry] = useState(false);
+  const [badEntryMessage, setBadEntryMessage] = useState(null);
 
   const registerUser = () => {
     if (password.length < 6) {
       setPassword("");
-      setShowBadEntry(true);
+      setBadEntryMessage("Password must be atleast 6 characters long");
       return;
     }
+    axios
+      .post("/api/users", {
+        email: `${email}`,
+        password: `${password}`,
+      })
+      .then((res) => {
+        axios
+          .post("/api/login", {
+            email: `${email}`,
+            password: `${password}`,
+          })
+          .then((res) => {
+            localStorage.setItem("jwt_token", res.data.token);
+            console.log(localStorage.getItem("jwt_token"));
+            props.setIsLoggedIn(true);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+        setBadEntryMessage("Email is already used");
+      });
     setEmail("");
     setPassword("");
   };
@@ -44,9 +69,7 @@ const Register = () => {
               Register
             </button>
           </div>
-          {showBadEntry ? (
-            <h6>Password must be atleast 6 characters long</h6>
-          ) : null}
+          {badEntryMessage ? <h6>{badEntryMessage}</h6> : null}
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showBadEntry, setShowBadEntry] = useState(false);
+
   const loginUser = () => {
     axios
       .post("/api/login", {
@@ -15,7 +16,7 @@ const Login = (props) => {
         setEmail("");
         setPassword("");
         localStorage.setItem("jwt_token", res.data.token);
-        props.setIsLoggedIn();
+        props.setIsLoggedIn(true);
       })
       .catch((err) => {
         console.log(err);
