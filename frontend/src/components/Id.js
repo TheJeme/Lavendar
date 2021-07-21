@@ -19,7 +19,6 @@ const Id = (props) => {
       .then((res) => {
         setLoginID("");
         localStorage.setItem("jwt_token", res.data.token);
-        console.log(localStorage.getItem("jwt_token"));
         props.setIsLoggedIn(true);
       })
       .catch((err) => {

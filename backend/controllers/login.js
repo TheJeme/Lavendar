@@ -3,6 +3,7 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+// Log in
 loginRouter.post("/", async (request, response) => {
   const body = request.body;
   const user = await User.findOne({ email: body.email });
@@ -25,7 +26,7 @@ loginRouter.post("/", async (request, response) => {
 
   const token = jwt.sign(userForToken, process.env.SECRET);
 
-  response.status(200).json({ token, email: user.email });
+  response.status(200).json({ token, email: user.email, id: user.id });
 });
 
 module.exports = loginRouter;

@@ -25,7 +25,6 @@ const Register = (props) => {
           })
           .then((res) => {
             localStorage.setItem("jwt_token", res.data.token);
-            console.log(localStorage.getItem("jwt_token"));
             props.setIsLoggedIn(true);
           })
           .catch((err) => {

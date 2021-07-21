@@ -3,23 +3,7 @@ const Event = require("../models/event");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
-eventRouter.put("/:id", async (request, response) => {
-  const body = request.body;
-
-  const event = {
-    likes: body.likes,
-  };
-
-  try {
-    const newEvent = await Event.findByIdAndUpdate(request.params.id, event, {
-      new: true,
-    });
-    response.json(newEvent.toJSON());
-  } catch (error) {
-    console.log(error);
-  }
-});
-
+// Delete event
 eventRouter.delete("/:id", async (request, response) => {
   const token = jwt.verify(request.token, process.env.SECRET);
 
@@ -38,6 +22,7 @@ eventRouter.delete("/:id", async (request, response) => {
   });
 });
 
+// Create new event
 eventRouter.post("/", async (request, response) => {
   const body = request.body;
   const token = jwt.verify(request.token, process.env.SECRET);
@@ -47,16 +32,15 @@ eventRouter.post("/", async (request, response) => {
 
   const user = await User.findById(token.id);
 
-  if (!body.title || !body.url || !body.author)
+  if (!body.title || !body.date || !body.time)
     return response
       .status(400)
-      .json({ error: "title or url or author is missing" });
+      .json({ error: "title or date or time is missing" });
 
   const event = new Event({
     title: body.title,
-    author: body.author,
-    url: body.url,
-    likes: body.likes,
+    time: body.time,
+    date: body.date,
     user: user._id,
   });
 
@@ -65,6 +49,18 @@ eventRouter.post("/", async (request, response) => {
   await user.save();
 
   response.json(savedEvent.toJSON());
+});
+
+// Get events
+eventRouter.get("/", async (request, response) => {
+  const body = request.body;
+  const token = jwt.verify(request.token, process.env.SECRET);
+
+  if (!token.id)
+    return response.status(401).json({ error: "token missing or invalid" });
+
+  const user = await User.findById(token.id).populate("events");
+  response.json(user.events);
 });
 
 module.exports = eventRouter;
