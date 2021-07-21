@@ -17,7 +17,7 @@ const Register = (props) => {
         email: `${email}`,
         password: `${password}`,
       })
-      .then((res) => {
+      .then(() => {
         axios
           .post("/api/login", {
             email: `${email}`,
