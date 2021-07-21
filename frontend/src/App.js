@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Calendar from "./components/Calendar";
 import Auth from "./components/Auth";
@@ -6,7 +6,7 @@ import Auth from "./components/Auth";
 import "./App.css";
 
 const App = () => {
-  const isLoggedIn = false;
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <div className="App">
       <header>
@@ -15,7 +15,14 @@ const App = () => {
           <span>
             Laven<b>der</b>
           </span>
-          <button className="logout text-btn">Logout</button>
+          {isLoggedIn ? (
+            <button
+              onClick={() => setIsLoggedIn(false)}
+              className="logout text-btn"
+            >
+              Logout
+            </button>
+          ) : null}
         </div>
       </header>
       <main>{isLoggedIn ? <Calendar /> : <Auth />}</main>

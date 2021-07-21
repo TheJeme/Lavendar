@@ -40,6 +40,13 @@ body {
   line-height: 1.5;
   color: var(--text-color);
   background: var(--bg-color);
+
+  /* Disables highlighting everywhere*/
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 header {
@@ -275,4 +282,9 @@ input {
 
 input:focus {
   outline: none;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
 }

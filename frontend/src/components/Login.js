@@ -3,6 +3,14 @@ import React, { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showBadEntry, setShowBadEntry] = useState(false);
+
+  const loginUser = () => {
+    setEmail("");
+    setPassword("");
+    setShowBadEntry(true);
+  };
+
   return (
     <div>
       <div className="header row flex-middle">
@@ -28,8 +36,16 @@ const Login = () => {
           </div>
           <br />
           <div className="col col-center">
-            <button className="btn">Log in</button>
+            <button
+              className="btn"
+              onClick={() => {
+                loginUser();
+              }}
+            >
+              Log in
+            </button>
           </div>
+          {showBadEntry ? <h6>Email or password is wrong</h6> : null}
         </div>
       </div>
     </div>
