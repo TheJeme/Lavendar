@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import CalendarHeader from "./CalendarHeader";
 import CalendarDays from "./CalendarDays";
@@ -9,10 +10,28 @@ import CalendarEvents from "./CalendarEvents";
 import { addMonths, subMonths } from "date-fns";
 
 const Calendar = () => {
+  const [events, setEvents] = useState([]);
+
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showDay, setShowDay] = useState(false);
   const [showCreateEvent, setShowCreateEvent] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("/api/events", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setEvents(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   const prevMonth = () => {
     setCurrentMonth(subMonths(currentMonth, 1));
@@ -31,10 +50,6 @@ const Calendar = () => {
     setShowDay(true);
   };
 
-  const showCreateEventForm = () => {
-    setShowCreateEvent(true);
-  };
-
   return (
     <div className="calendar">
       {!showDay ? (
@@ -46,6 +61,7 @@ const Calendar = () => {
           />
           <CalendarDays currentMonth={currentMonth} />
           <CalendarCells
+            events={events}
             currentMonth={currentMonth}
             selectedDate={selectedDate}
             onDateClick={onDateClick}
@@ -53,15 +69,13 @@ const Calendar = () => {
         </div>
       ) : (
         <div>
-          <CalendarDay
-            selectedDate={selectedDate}
-            onBackClick={onBackClick}
-            nextMonth={nextMonth}
-          />
+          <CalendarDay selectedDate={selectedDate} onBackClick={onBackClick} />
           <CalendarEvents
+            events={events}
+            setEvents={setEvents}
+            selectedDate={selectedDate}
             showCreateEvent={showCreateEvent}
-            nextMonth={nextMonth}
-            showCreateEventForm={showCreateEventForm}
+            setShowCreateEvent={setShowCreateEvent}
           />
         </div>
       )}

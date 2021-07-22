@@ -1,3 +1,3 @@
-DELETE http://localhost:3003/api/events/60f800c01b2f9778acae6209 
+DELETE http://localhost:3003/api/events/60f8344ce866de8404db90b1 
 Content-Type: application/json
-Authorization: bearer 
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiaWQiOiI2MGY4MDBjMDFiMmY5Nzc4YWNhZTYyMDkiLCJpYXQiOjE2MjY4ODAxMDV9.VI5qXf2bdOOYFVi-vjRJvUg29M8PbqcJSKfKSToVc-4

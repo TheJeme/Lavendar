@@ -28,6 +28,16 @@ const CalendarCells = (props) => {
     for (let i = 0; i < 7; i++) {
       formattedDate = format(day, dateFormat);
       const cloneDay = day;
+      let filteredEvents;
+      if (props.events && props.events.length > 0) {
+        filteredEvents = props.events.filter(
+          (event) =>
+            event.date ===
+            `${cloneDay.getDate()}.${
+              cloneDay.getMonth() + 1
+            }.${cloneDay.getFullYear()}`
+        );
+      }
       days.push(
         <div
           className={`col cell ${
@@ -46,7 +56,9 @@ const CalendarCells = (props) => {
             {formattedDate}
           </span>
           <span className="bg">{formattedDate}</span>
-          {/*<span className="event">1</span>*/}
+          {filteredEvents && filteredEvents.length > 0 ? (
+            <span className="event">{filteredEvents.length}</span>
+          ) : null}
         </div>
       );
       day = addDays(day, 1);

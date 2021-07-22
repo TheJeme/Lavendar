@@ -11,7 +11,7 @@ const CalendarDay = (props) => {
       <div className="col col-center">
         <span>{props.selectedDate.toLocaleDateString()}</span>
       </div>
-      <div className="col col-end" onClick={props.nextMonth}></div>
+      <div className="col col-end"></div>
     </div>
   );
 };

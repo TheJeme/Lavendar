@@ -5,6 +5,5 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQ
 {
   "title": "title",
   "time": "12.00",
-  "date": "21.7.2021",
-  "userId": "123456"
+  "date": "21.7.2021"
 }
