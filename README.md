@@ -42,4 +42,4 @@ You can start backend with command ```npm start``` or do tests with ```npm run t
 
 ### Start Backend
 
-You can start backend with command ```npm start``` or in development phase with ```npm run dev``` or do tests with ```npm run test```
+You can start backend with command ```npm start``` or in development mode with ```npm run dev``` or run tests with ```npm run test```
