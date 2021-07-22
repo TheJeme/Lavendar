@@ -35,3 +35,11 @@ You can configure and run the project locally by following the steps below.
    npm install
    ```
 7. Create an .env file similar to the env.example file.
+
+### Start Frontend
+
+You can start backend with command ```npm start``` or do tests with ```npm run test```
+
+### Start Backend
+
+You can start backend with command ```npm start``` or in development phase with ```npm run dev``` or do tests with ```npm run test```
