@@ -5,7 +5,7 @@ const Api = (props) => {
     <div className="calendar">
       <header className="header row flex-middle">
         <div className="col col-center api-text">
-          <span>Lavender REST Api</span>
+          <span>Lavendar REST Api</span>
         </div>
       </header>
       <div>
@@ -17,10 +17,10 @@ const Api = (props) => {
         <div className="row flex-middle">
           <div className="col col-start">
             <p className="api-text">
-              Lavender is a calendar app where you can set events for specific
+              Lavendar is a calendar app where you can set events for specific
               days and times. This document describes a REST API which can be
               used freely on any purpose. API is mainly built solely for
-              Lavender app but it can be extended to other apps.
+              Lavendar app but it can be extended to other apps.
             </p>
           </div>
         </div>

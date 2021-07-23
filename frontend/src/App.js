@@ -34,7 +34,7 @@ const App = () => {
           <div id="logo">
             <span className="icon">date_range</span>
             <span>
-              Laven<b>der</b>
+              Laven<b>dar</b>
             </span>
             {isLoggedIn ? (
               <button onClick={() => logout()} className="logout text-btn">
