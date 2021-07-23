@@ -1,4 +1,4 @@
-päivä - tunnit - mitä tein
+[päivä] - [tunnit] - [mitä tein]
 16.7 - 2 - suunnittelin aiheen ja tein suunnitelmat miten toteutan sovellukseni.
 17.7 - 2 - Suunnittelin frontendiä ja aloitin tekemään sitä.
 18.7 - 8 - Jatkoin paljon frontendiä.
