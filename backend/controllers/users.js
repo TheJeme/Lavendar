@@ -22,7 +22,7 @@ usersRouter.post("/", async (request, response) => {
   });
 
   const newUser = await user.save();
-  response.json(newUser.toJSON());
+  response.json({ id: newUser.id });
 });
 
 // Get user data

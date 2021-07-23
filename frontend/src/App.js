@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 
 import Calendar from "./components/Calendar";
 import Auth from "./components/Auth";
+import Api from "./components/Api";
 import "./App.css";
 
 axios.defaults.baseURL = "http://localhost:3003";
@@ -26,24 +28,37 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <header>
-        <div id="logo">
-          <span className="icon">date_range</span>
-          <span>
-            Laven<b>der</b>
-          </span>
-          {isLoggedIn ? (
-            <button onClick={() => logout()} className="logout text-btn">
-              Logout
-            </button>
-          ) : null}
-        </div>
-      </header>
-      <main>
-        {isLoggedIn ? <Calendar /> : <Auth setIsLoggedIn={setIsLoggedIn} />}
-      </main>
-    </div>
+    <Router>
+      <div>
+        <header>
+          <div id="logo">
+            <span className="icon">date_range</span>
+            <span>
+              Laven<b>der</b>
+            </span>
+            {isLoggedIn ? (
+              <button onClick={() => logout()} className="logout text-btn">
+                Logout
+              </button>
+            ) : null}
+          </div>
+        </header>
+        <main>
+          <Switch>
+            <Route exact path="/">
+              {isLoggedIn ? (
+                <Calendar />
+              ) : (
+                <Auth setIsLoggedIn={setIsLoggedIn} />
+              )}
+            </Route>
+            <Route exact path="/api">
+              <Api />
+            </Route>
+          </Switch>
+        </main>
+      </div>
+    </Router>
   );
 };
 

@@ -5,4 +5,5 @@ päivä - tunnit - mitä tein
 19.7 - 4 - Frontend (css, favicon, manifest, index.html)
 20.7 - 4 - Frontend (Kalenteri UI)
 21.7 - 8 - Frontend (Kalenteri UI jatkettu, Login, Register), Backend (Login, Register)
-22.7 - 5 - Frontend api kutsut backendiin
+22.7 - 5 - Frontend api kutsut backendiin.
+23.7 - 7 - /api sivu.

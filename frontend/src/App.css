@@ -119,6 +119,7 @@ main {
 .calendar {
   display: block;
   position: relative;
+  margin-bottom: 14em;
   width: 100%;
   background: var(--neutral-color);
   border: 1px solid var(--border-color);
@@ -291,4 +292,47 @@ input:-webkit-autofill {
 
 .entry-text {
   margin-bottom: 0;
+}
+
+.api-text {
+  padding-left: 2em;
+  padding-right: 2em;
+  font-size: 1.3em;
+}
+
+.api-method {
+  font-family: Consolas, "courier new";
+  color: #4d853a;
+  padding-right: 1em;
+}
+
+.api-code {
+  font-family: Consolas, "courier new";
+  color: var(--main-color);
+  background-color: #f1f1f1;
+  padding: 2px;
+}
+
+.api-response {
+  font-weight: 600;
+  color: #2686cf;
+  padding-right: 1em;
+}
+
+.api-auth {
+  font-weight: 600;
+  color: #e74c3c;
+  padding-right: 1em;
+}
+
+.api-table {
+  font-family: Consolas, "courier new";
+  margin-left: 1.3em;
+  margin-bottom: 1em;
+  font-size: 1.3em;
+}
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
 }

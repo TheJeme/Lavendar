@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import validator from "validator";
 import axios from "axios";
 
 const Register = (props) => {
@@ -10,6 +11,10 @@ const Register = (props) => {
     if (password.length < 6) {
       setPassword("");
       setBadEntryMessage("Password must be atleast 6 characters long");
+      return;
+    }
+    if (!validator.isEmail(email)) {
+      setBadEntryMessage("Email must be valid");
       return;
     }
     axios
