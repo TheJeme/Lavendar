@@ -8,4 +8,4 @@
 22.7 - 5 - Frontend api kutsut backendiin.
 23.7 - 8 - /api sivu, sovelluksen uudelleen nimeäminen, heroku deployment.
 24.7 - 2 - suunnittelu
-25.7 - 2 - Frontend jatkoa.
+25.7 - 3 - Frontend jatkoa.

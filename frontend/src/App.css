@@ -340,3 +340,10 @@ td {
   border-bottom: 1px solid #ddd;
   padding: 15px;
 }
+
+.checkbox {
+  margin-left: 1em;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}

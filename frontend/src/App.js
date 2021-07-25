@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 
 import Calendar from "./components/Calendar";
+import Tasks from "./components/Tasks";
 import Auth from "./components/Auth";
 import Api from "./components/Api";
 import "./App.css";
@@ -56,7 +57,9 @@ const App = () => {
                 <Auth setIsLoggedIn={setIsLoggedIn} />
               ) : calendarView ? (
                 <Calendar />
-              ) : null}
+              ) : (
+                <Tasks />
+              )}
             </Route>
             <Route exact path="/api">
               <Api />
