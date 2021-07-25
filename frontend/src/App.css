@@ -138,6 +138,10 @@ main {
   transition: 0.15s ease-out;
 }
 
+.icon:hover {
+  cursor: pointer;
+}
+
 .calendar .header .icon:hover {
   transform: scale(1.75);
   transition: 0.25s ease-out;

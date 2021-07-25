@@ -42,7 +42,7 @@ const CalendarEvents = (props) => {
     eventObjects.push(
       <div key={event.id} className="header row flex-middle">
         <div className="col col-start">
-          <span>&emsp;{event.time}</span>
+          <span>&emsp;{event.time !== "undefined" ? event.time : ""}</span>
         </div>
         <div className="col col-center">
           <span>{event.title}</span>

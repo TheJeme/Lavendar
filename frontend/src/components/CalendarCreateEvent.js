@@ -6,7 +6,7 @@ const CalendarCreateEvent = (props) => {
   const [title, setTitle] = useState();
   const [time, setTime] = useState();
   const createNewEvent = () => {
-    if (!title || !time) return;
+    if (!title) return;
     axios
       .post(
         "/api/events",

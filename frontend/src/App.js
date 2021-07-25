@@ -14,6 +14,7 @@ window.onbeforeunload = () => {
 };
 
 const App = () => {
+  const [calendarView, setCalendarView] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -32,7 +33,12 @@ const App = () => {
       <div>
         <header>
           <div id="logo">
-            <span className="icon">date_range</span>
+            <span
+              className="icon"
+              onClick={() => setCalendarView(!calendarView)}
+            >
+              {calendarView ? "date_range" : "article"}
+            </span>
             <span>
               Laven<b>dar</b>
             </span>
@@ -46,11 +52,11 @@ const App = () => {
         <main>
           <Switch>
             <Route exact path="/">
-              {isLoggedIn ? (
-                <Calendar />
-              ) : (
+              {!isLoggedIn ? (
                 <Auth setIsLoggedIn={setIsLoggedIn} />
-              )}
+              ) : calendarView ? (
+                <Calendar />
+              ) : null}
             </Route>
             <Route exact path="/api">
               <Api />
