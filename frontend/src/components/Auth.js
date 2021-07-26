@@ -14,7 +14,9 @@ const Auth = (props) => {
     <div>
       <header>
         <div id="logo">
-          <span className="icon">account_box</span>
+          <span className="icon">
+            {loginView ? "account_box" : "description"}
+          </span>
           <span>
             Laven<b>dar</b>
           </span>

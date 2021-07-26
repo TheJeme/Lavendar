@@ -48,21 +48,23 @@ const Api = () => {
         <div className="row flex-middle">
           <div className="col col-start">
             <table className="api-table">
-              <tr>
-                <th>Field</th>
-                <th>Info</th>
-                <th>Example</th>
-              </tr>
-              <tr>
-                <th>email</th>
-                <th></th>
-                <th>admin@test.com</th>
-              </tr>
-              <tr>
-                <th>password</th>
-                <th></th>
-                <th>123456</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Field</th>
+                  <th>Info</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <th>email</th>
+                  <th></th>
+                  <th>admin@test.com</th>
+                </tr>
+                <tr>
+                  <th>password</th>
+                  <th></th>
+                  <th>123456</th>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -95,21 +97,23 @@ const Api = () => {
         <div className="row flex-middle">
           <div className="col col-start">
             <table className="api-table">
-              <tr>
-                <th>Field</th>
-                <th>Info</th>
-                <th>Example</th>
-              </tr>
-              <tr>
-                <th>email</th>
-                <th>[unique]</th>
-                <th>admin@test.com</th>
-              </tr>
-              <tr>
-                <th>password</th>
-                <th>[min-length: 6]</th>
-                <th>123456</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Field</th>
+                  <th>Info</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <th>email</th>
+                  <th>[unique]</th>
+                  <th>admin@test.com</th>
+                </tr>
+                <tr>
+                  <th>password</th>
+                  <th>[min-length: 6]</th>
+                  <th>123456</th>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -209,26 +213,28 @@ const Api = () => {
         <div className="row flex-middle">
           <div className="col col-start">
             <table className="api-table">
-              <tr>
-                <th>Field</th>
-                <th>Info</th>
-                <th>Example</th>
-              </tr>
-              <tr>
-                <th>title</th>
-                <th>[max-length: 45]</th>
-                <th>New event</th>
-              </tr>
-              <tr>
-                <th>date</th>
-                <th></th>
-                <th>17.3.2021</th>
-              </tr>
-              <tr>
-                <th>time</th>
-                <th></th>
-                <th>12.00</th>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Field</th>
+                  <th>Info</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <th>title</th>
+                  <th>[max-length: 45]</th>
+                  <th>New event</th>
+                </tr>
+                <tr>
+                  <th>date</th>
+                  <th></th>
+                  <th>17.3.2021</th>
+                </tr>
+                <tr>
+                  <th>time</th>
+                  <th>[optional]</th>
+                  <th>12.00</th>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
