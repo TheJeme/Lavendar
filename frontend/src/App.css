@@ -138,7 +138,7 @@ main {
   transition: 0.15s ease-out;
 }
 
-.icon:hover {
+.icon-btn:hover {
   cursor: pointer;
 }
 

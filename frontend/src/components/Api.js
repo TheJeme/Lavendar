@@ -1,8 +1,8 @@
 import React from "react";
 
-const Api = (props) => {
+const Api = () => {
   return (
-    <div className="calendar">
+    <main className="calendar">
       <header className="header row flex-middle">
         <div className="col col-center api-text">
           <span>Lavendar REST Api</span>
@@ -19,8 +19,7 @@ const Api = (props) => {
             <p className="api-text">
               Lavendar is a calendar app where you can set events for specific
               days and times. This document describes a REST API which can be
-              used freely on any purpose. API is mainly built solely for
-              Lavendar app but it can be extended to other apps.
+              used freely on any purpose. API is built mainly for Lavendar app.
             </p>
           </div>
         </div>
@@ -276,7 +275,7 @@ const Api = (props) => {
         </div>
       </div>
       <br />
-    </div>
+    </main>
   );
 };
 
