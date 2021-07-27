@@ -314,7 +314,7 @@ input:-webkit-autofill {
 }
 
 .api-method {
-  font-family: Consolas, "courier new";
+  font-weight: 600;
   color: #4d853a;
   padding-right: 1em;
 }
