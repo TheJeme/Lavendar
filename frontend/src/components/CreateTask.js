@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const CreateTask = () => {
+const CreateTask = (props) => {
   const [title, setTitle] = useState();
-  const [description, setDescription] = useState();
   const createNewTask = () => {
     if (!title) return;
     axios
@@ -52,20 +51,12 @@ const CreateTask = () => {
           />
         </div>
         <br />
-        <div>
-          Description{" "}
-          <input
-            name="description"
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </div>
-        <br />
         <button className="btn">Create</button>
       </div>
       <div className="col col-end">
-        <div className="icon">close</div>
+        <div className="icon" onClick={() => props.setShowCreateTask(false)}>
+          close
+        </div>
       </div>
     </>
   );

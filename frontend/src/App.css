@@ -133,6 +133,15 @@ main {
   border-bottom: 1px solid var(--border-color);
 }
 
+.calendar-border {
+  border-top: 1px solid var(--border-color);
+}
+
+.tasks {
+  padding: 1.5em 0;
+  border-bottom: 0px;
+}
+
 .calendar .header .icon {
   cursor: pointer;
   transition: 0.15s ease-out;

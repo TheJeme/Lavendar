@@ -1,44 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import CreateTask from "./CreateTask";
 
 const Tasks = () => {
+  const [showCreateTask, setShowCreateTask] = useState(false);
+
   const deleteTask = (id) => {};
 
-  const eventObjects = [];
-  eventObjects.push(
-    <div key="TODO" className="header row flex-middle">
-      <div className="col col-start">
-        <input type="checkbox" className="checkbox" />
-      </div>
-      <div className="col col-center">
-        <span>task 01</span>
-      </div>
-      <div className="col col-end">
-        <div className="icon" onClick={() => deleteTask("s")}>
-          close
+  const taskObjects = [];
+  for (let i = 0; i < 2; i++) {
+    taskObjects.push(
+      <div key={i} className="header tasks row flex-middle">
+        <div className="col col-start">
+          <input type="checkbox" className="checkbox" />
+          <span className="api-text">task 0{i}</span>
+        </div>
+        <div className="col col-end">
+          <div className="icon">close</div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 
   return (
     <div className="calendar">
-      <div className="header row flex-middle">
-        <div className="col col-start"></div>
-        <div className="col col-center">
+      <header className="header row flex-middle">
+        <div className="col col-center api-text">
           <span>Tasks</span>
         </div>
-        <div className="col col-end"></div>
-      </div>
-      {eventObjects}
+      </header>
+      {taskObjects}
       <div className="header row flex-middle">
-        {1 == 1 ? (
-          <CreateTask />
+        {showCreateTask ? (
+          <CreateTask setShowCreateTask={setShowCreateTask} />
         ) : (
           <div className="col col-center">
-            <div className="icon">add</div>
+            <div className="icon" onClick={() => setShowCreateTask(true)}>
+              add
+            </div>
           </div>
         )}
       </div>

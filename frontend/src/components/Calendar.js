@@ -4,7 +4,6 @@ import axios from "axios";
 import CalendarHeader from "./CalendarHeader";
 import CalendarDays from "./CalendarDays";
 import CalendarCells from "./CalendarCells";
-import CalendarDay from "./CalendarDay";
 import CalendarEvents from "./CalendarEvents";
 
 import { addMonths, subMonths } from "date-fns";
@@ -14,7 +13,6 @@ const Calendar = () => {
 
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [showDay, setShowDay] = useState(false);
   const [showCreateEvent, setShowCreateEvent] = useState(false);
 
   useEffect(() => {
@@ -41,44 +39,32 @@ const Calendar = () => {
     setCurrentMonth(addMonths(currentMonth, 1));
   };
 
-  const onBackClick = () => {
-    setShowDay(false);
-  };
-
   const onDateClick = (day) => {
     setSelectedDate(day);
-    setShowDay(true);
   };
 
   return (
     <div className="calendar">
-      {!showDay ? (
-        <div>
-          <CalendarHeader
-            prevMonth={prevMonth}
-            nextMonth={nextMonth}
-            currentMonth={currentMonth}
-          />
-          <CalendarDays currentMonth={currentMonth} />
-          <CalendarCells
-            events={events}
-            currentMonth={currentMonth}
-            selectedDate={selectedDate}
-            onDateClick={onDateClick}
-          />
-        </div>
-      ) : (
-        <div>
-          <CalendarDay selectedDate={selectedDate} onBackClick={onBackClick} />
-          <CalendarEvents
-            events={events}
-            setEvents={setEvents}
-            selectedDate={selectedDate}
-            showCreateEvent={showCreateEvent}
-            setShowCreateEvent={setShowCreateEvent}
-          />
-        </div>
-      )}
+      <CalendarHeader
+        prevMonth={prevMonth}
+        nextMonth={nextMonth}
+        currentMonth={currentMonth}
+      />
+      <CalendarDays currentMonth={currentMonth} />
+      <CalendarCells
+        events={events}
+        currentMonth={currentMonth}
+        selectedDate={selectedDate}
+        onDateClick={onDateClick}
+      />
+      <div className="calendar-border" />
+      <CalendarEvents
+        events={events}
+        setEvents={setEvents}
+        selectedDate={selectedDate}
+        showCreateEvent={showCreateEvent}
+        setShowCreateEvent={setShowCreateEvent}
+      />
     </div>
   );
 };
