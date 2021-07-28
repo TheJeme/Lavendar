@@ -7,9 +7,10 @@ const CreateTask = (props) => {
     if (!title) return;
     axios
       .post(
-        "/api/events",
+        "/api/tasks",
         {
           title: `${title}`,
+          completed: false,
         },
         {
           headers: {
@@ -18,14 +19,16 @@ const CreateTask = (props) => {
         }
       )
       .then(() => {
+        props.setShowCreateTask(false);
         axios
-          .get("/api/events", {
+          .get("/api/tasks", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
             },
           })
           .then((res) => {
             console.log(res.data);
+            props.setTasks(res.data);
           })
           .catch((err) => {
             console.log(err);
@@ -51,7 +54,9 @@ const CreateTask = (props) => {
           />
         </div>
         <br />
-        <button className="btn">Create</button>
+        <button className="btn" onClick={() => createNewTask()}>
+          Create
+        </button>
       </div>
       <div className="col col-end">
         <div className="icon" onClick={() => props.setShowCreateTask(false)}>

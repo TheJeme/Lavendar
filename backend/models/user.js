@@ -18,6 +18,12 @@ const userSchema = new mongoose.Schema({
       ref: "Event",
     },
   ],
+  tasks: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Task",
+    },
+  ],
 });
 
 userSchema.plugin(uniqueValidator);

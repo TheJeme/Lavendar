@@ -1,27 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import CreateTask from "./CreateTask";
 
 const Tasks = () => {
+  const [tasks, setTasks] = useState([]);
   const [showCreateTask, setShowCreateTask] = useState(false);
 
-  const deleteTask = (id) => {};
+  useEffect(() => {
+    axios
+      .get("/api/tasks", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setTasks(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  const taskObjects = [];
-  for (let i = 0; i < 2; i++) {
-    taskObjects.push(
-      <div key={i} className="header tasks row flex-middle">
-        <div className="col col-start">
-          <input type="checkbox" className="checkbox" />
-          <span className="api-text">task 0{i}</span>
-        </div>
-        <div className="col col-end">
-          <div className="icon">close</div>
-        </div>
-      </div>
-    );
-  }
+  const deleteTask = (id) => {
+    axios
+      .delete(`/api/tasks/${id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
+        },
+      })
+      .then(() => {
+        axios
+          .get("/api/tasks", {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
+            },
+          })
+          .then((res) => {
+            console.log(res.data);
+            setTasks(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="calendar">
@@ -30,10 +57,29 @@ const Tasks = () => {
           <span>Tasks</span>
         </div>
       </header>
-      {taskObjects}
+      {tasks.map((task) => (
+        <div key={task.id} className="header tasks row flex-middle">
+          <div className="col col-start">
+            <input
+              type="checkbox"
+              checked={task.completed}
+              className="checkbox"
+            />
+            <span className="api-text">{task.title}</span>
+          </div>
+          <div className="col col-end">
+            <div className="icon" onClick={() => deleteTask(task.id)}>
+              close
+            </div>
+          </div>
+        </div>
+      ))}
       <div className="header row flex-middle">
         {showCreateTask ? (
-          <CreateTask setShowCreateTask={setShowCreateTask} />
+          <CreateTask
+            setTasks={setTasks}
+            setShowCreateTask={setShowCreateTask}
+          />
         ) : (
           <div className="col col-center">
             <div className="icon" onClick={() => setShowCreateTask(true)}>

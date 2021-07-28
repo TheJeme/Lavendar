@@ -36,7 +36,7 @@ const Auth = (props) => {
                 onClick={() => setAuthState("login")}
                 className={`text-btn ${authState === "login" ? "active" : ""}`}
               >
-                Log in
+                LOG IN
               </span>
             </div>
             <div className="col col-center">
@@ -46,7 +46,7 @@ const Auth = (props) => {
                   authState === "register" ? "active" : ""
                 }`}
               >
-                Register
+                REGISTER
               </span>
             </div>
             <div className="col col-center">

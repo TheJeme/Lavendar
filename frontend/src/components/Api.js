@@ -5,7 +5,7 @@ const Api = () => {
     <main className="calendar">
       <header className="header row flex-middle">
         <div className="col col-center api-text">
-          <span>Lavendar REST Api</span>
+          <span>Lavendar REST API</span>
         </div>
       </header>
       <div>
@@ -221,7 +221,7 @@ const Api = () => {
                 </tr>
                 <tr>
                   <th>title</th>
-                  <th>[max-length: 45]</th>
+                  <th></th>
                   <th>New event</th>
                 </tr>
                 <tr>
