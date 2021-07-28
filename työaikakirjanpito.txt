@@ -6,7 +6,7 @@
 20.7 - 4 - Frontend (Kalenteri UI)
 21.7 - 8 - Frontend (Kalenteri UI jatkettu, Login, Register), Backend (Login, Register)
 22.7 - 5 - Frontend api kutsut backendiin.
-23.7 - 8 - /api sivu, sovelluksenKZAL328A83RS uudelleen nimeäminen, heroku deployment.
+23.7 - 8 - /api sivu, sovelluksen uudelleen nimeäminen, heroku deployment.
 24.7 - 2 - Suunnittelu.
 25.7 - 3 - Frontend jatkoa.
 26.7 - 3 - Code refactor ja Frontend jatkoa.
