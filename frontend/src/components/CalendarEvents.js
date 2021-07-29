@@ -56,7 +56,7 @@ const CalendarEvents = (props) => {
     );
   });
   return (
-    <div>
+    <>
       {eventObjects}
       <div className="header row flex-middle">
         {props.showCreateEvent ? (
@@ -76,7 +76,7 @@ const CalendarEvents = (props) => {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

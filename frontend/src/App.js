@@ -26,13 +26,13 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
       {!isLoggedIn ? (
         <Auth setIsLoggedIn={setIsLoggedIn} />
       ) : (
         <Main logout={logout} />
       )}
-    </div>
+    </>
   );
 };
 

@@ -17,9 +17,9 @@ const Api = () => {
         <div className="row flex-middle">
           <div className="col col-start">
             <p className="api-text">
-              Lavendar is a calendar app where you can set events for specific
-              days and times. This document describes a REST API which can be
-              used freely on any purpose. API is built mainly for Lavendar app.
+              Lavendar is a calendar and tasks app. This document describes a
+              REST API which can be used for free and for any purpose. API is
+              built mainly for Lavendar app.
             </p>
           </div>
         </div>
@@ -271,6 +271,175 @@ const Api = () => {
           <div className="col col-start">
             <span className="api-method api-text">DELETE</span>
             <code className="api-code api-text">/api/events/:id</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-auth api-text">Authorization</span>
+            <code className="api-code api-text">user access token</code>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="header row flex-middle">
+          <div className="col col-start api-text">
+            <span>Get Tasks</span>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <p className="api-text">Gets tasks from user.</p>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-method api-text">GET</span>
+            <code className="api-code api-text">/api/tasks</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-auth api-text">Authorization</span>
+            <code className="api-code api-text">user access token</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-response api-text">Response Fields</span>
+            <code className="api-code api-text">tasks</code>
+          </div>
+        </div>
+        <br />
+        <hr />
+      </div>
+
+      <div>
+        <div className="header row flex-middle">
+          <div className="col col-start api-text">
+            <span>Create Task</span>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <p className="api-text">Creates new task on user logged in.</p>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-method api-text">POST</span>
+            <code className="api-code api-text">/api/tasks</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <table className="api-table">
+              <tbody>
+                <tr>
+                  <th>Field</th>
+                  <th>Info</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <th>title</th>
+                  <th></th>
+                  <th>New task</th>
+                </tr>
+                <tr>
+                  <th>completed</th>
+                  <th>[optional, default=false]</th>
+                  <th>true</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-auth api-text">Authorization</span>
+            <code className="api-code api-text">user access token</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-response api-text">Response Fields</span>
+            <code className="api-code api-text">
+              title, completed, user, id
+            </code>
+          </div>
+        </div>
+        <br />
+        <hr />
+      </div>
+
+      <div>
+        <div className="header row flex-middle">
+          <div className="col col-start api-text">
+            <span>Edit Task completed</span>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <p className="api-text">Edits task's completed value.</p>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-method api-text">PUT</span>
+            <code className="api-code api-text">/api/tasks/:id</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <table className="api-table">
+              <tbody>
+                <tr>
+                  <th>Field</th>
+                  <th>Info</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <th>completed</th>
+                  <th></th>
+                  <th>true</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-auth api-text">Authorization</span>
+            <code className="api-code api-text">user access token</code>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-response api-text">Response Fields</span>
+            <code className="api-code api-text">
+              title, completed, user, id
+            </code>
+          </div>
+        </div>
+        <br />
+        <hr />
+      </div>
+
+      <div>
+        <div className="header row flex-middle">
+          <div className="col col-start api-text">
+            <span>Delete Task</span>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <p className="api-text">Deletes task from user by task's id.</p>
+          </div>
+        </div>
+        <div className="row flex-middle">
+          <div className="col col-start">
+            <span className="api-method api-text">DELETE</span>
+            <code className="api-code api-text">/api/tasks/:id</code>
           </div>
         </div>
         <div className="row flex-middle">

@@ -1,0 +1,7 @@
+POST http://localhost:3003/api/tasks 
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiaWQiOiI2MGY4MDBjMDFiMmY5Nzc4YWNhZTYyMDkiLCJpYXQiOjE2MjY4NzkwNDJ9.EMoeUbw-ltw2N27lDXDgW-QzfDZCccfx_0sePXcytEA
+
+{
+  "title": "title",
+}

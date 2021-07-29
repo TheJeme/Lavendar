@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CreateTask = (props) => {
-  const [title, setTitle] = useState();
+  const [title, setTitle] = useState("");
   const createNewTask = () => {
     if (!title) return;
     axios
@@ -40,7 +40,7 @@ const CreateTask = (props) => {
   };
 
   return (
-    <>
+    <div className="header row flex-middle">
       <div className="col col-start"></div>
       <div className="col col-center">
         <div>
@@ -63,7 +63,7 @@ const CreateTask = (props) => {
           close
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

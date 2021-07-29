@@ -13,7 +13,7 @@ const CalendarHeader = (props) => {
         </div>
       </div>
       <div className="col col-center">
-        <span>{format(props.currentMonth, dateFormat)}</span>
+        <span>{format(props.currentMonth, dateFormat).toUpperCase()}</span>
       </div>
       <div className="col col-end" onClick={props.nextMonth}>
         <div className="icon">chevron_right</div>

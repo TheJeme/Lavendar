@@ -7,7 +7,7 @@ const Main = (props) => {
   const [calendarView, setCalendarView] = useState(true);
 
   return (
-    <div>
+    <>
       <header>
         <div id="logo">
           <span
@@ -25,7 +25,7 @@ const Main = (props) => {
         </div>
       </header>
       <main>{calendarView ? <Calendar /> : <Tasks />}</main>
-    </div>
+    </>
   );
 };
 

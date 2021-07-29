@@ -11,7 +11,7 @@ const Auth = (props) => {
   const [loginView, setLoginView] = useState(true);
 
   return (
-    <div>
+    <>
       <header>
         <div id="logo">
           <span className="icon">
@@ -69,7 +69,7 @@ const Auth = (props) => {
       ) : (
         <Api />
       )}
-    </div>
+    </>
   );
 };
 

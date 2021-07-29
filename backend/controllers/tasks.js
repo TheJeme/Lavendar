@@ -22,6 +22,24 @@ taskRouter.delete("/:id", async (request, response) => {
   });
 });
 
+// Edit task completed by id.
+taskRouter.put("/:id", async (request, response) => {
+  const body = request.body;
+
+  const task = {
+    completed: body.completed,
+  };
+
+  try {
+    const newTask = await Task.findByIdAndUpdate(request.params.id, task, {
+      new: true,
+    });
+    response.json(newTask.toJSON());
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // Create new task
 taskRouter.post("/", async (request, response) => {
   const body = request.body;
@@ -35,7 +53,7 @@ taskRouter.post("/", async (request, response) => {
   if (!body.title)
     return response
       .status(400)
-      .json({ error: "title or completed is missing" });
+      .json({ error: "title is missing" });
 
   const task = new Task({
     title: body.title,
