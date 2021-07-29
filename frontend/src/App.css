@@ -360,3 +360,24 @@ td {
   width: 25px;
   background-color: #eee;
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: visible;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 0.7em;
+  text-align: center;
+  padding: 3px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}

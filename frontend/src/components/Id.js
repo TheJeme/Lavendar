@@ -36,6 +36,7 @@ const Id = (props) => {
         password: `secret`,
       })
       .then(() => {
+        localStorage.setItem("showTooltip", true)
         navigator.clipboard.writeText(id);
         setLoginID(id);
         setShowGoodEntry(true);

@@ -12,4 +12,4 @@
 26.7 - 3 - Code refactor ja Frontend jatkoa.
 27.7 - 2 - Code refactor ja Frontend UI fixejä.
 28.7 - 8 - Tasks, Css, Backend.
-29.7 - 6 - Tasks valmiiksi, css, backend rest calls, Code Refactor.
+29.7 - 6 - Tasks valmiiksi, css, backend rest calls, Code Refactor, Tooltip.

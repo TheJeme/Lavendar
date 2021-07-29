@@ -30,6 +30,7 @@ const Register = (props) => {
           })
           .then((res) => {
             localStorage.setItem("jwt_token", res.data.token);
+            localStorage.setItem("showTooltip", true)
             props.setIsLoggedIn(true);
           })
           .catch((err) => {
