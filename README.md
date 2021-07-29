@@ -1,6 +1,6 @@
 # Lavendar
 
-Lavendar is a fullstack app made for Open Full Stack Project Course. Lavendar is made using MERN-Stack. It also has free public api that you can use on your own projects.
+Lavendar is a fullstack calendar and tasks app made for Open Full Stack Project Course. Lavendar is made using MERN-Stack. It also has free public api that you can use on your own projects.
 
 ### Built with
 
