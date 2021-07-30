@@ -26,6 +26,10 @@ const Login = (props) => {
       });
   };
 
+  const setStayLoggedIn = () => {
+    localStorage.setItem("stayloggedin", true);
+  };
+
   return (
     <div>
       <div className="header row flex-middle">
@@ -47,6 +51,15 @@ const Login = (props) => {
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <br />
+          <div>
+            Stay signed in{" "}
+            <input
+              type="checkbox"
+              name="checkbox"
+              onChange={(e) => setStayLoggedIn(e.target.value)}
             />
           </div>
           <br />

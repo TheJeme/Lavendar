@@ -36,7 +36,7 @@ const Id = (props) => {
         password: `secret`,
       })
       .then(() => {
-        localStorage.setItem("showTooltip", true)
+        localStorage.setItem("showTooltip", true);
         navigator.clipboard.writeText(id);
         setLoginID(id);
         setShowGoodEntry(true);
@@ -44,6 +44,10 @@ const Id = (props) => {
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const setStayLoggedIn = () => {
+    localStorage.setItem("stayloggedin", true);
   };
 
   return (
@@ -59,6 +63,15 @@ const Id = (props) => {
               maxLength="12"
               value={loginID}
               onChange={(e) => setLoginID(e.target.value.toUpperCase())}
+            />
+          </div>
+          <br />
+          <div>
+            Stay signed in{" "}
+            <input
+              type="checkbox"
+              name="checkbox"
+              onChange={(e) => setStayLoggedIn(e.target.value)}
             />
           </div>
           <br />
