@@ -27,7 +27,6 @@ const CreateTask = (props) => {
             },
           })
           .then((res) => {
-            console.log(res.data);
             props.setTasks(res.data);
           })
           .catch((err) => {

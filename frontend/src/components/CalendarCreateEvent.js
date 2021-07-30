@@ -30,7 +30,6 @@ const CalendarCreateEvent = (props) => {
             },
           })
           .then((res) => {
-            console.log(res.data);
             props.setEvents(res.data);
           })
           .catch((err) => {
