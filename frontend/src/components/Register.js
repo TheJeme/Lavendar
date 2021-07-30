@@ -30,7 +30,7 @@ const Register = (props) => {
           })
           .then((res) => {
             localStorage.setItem("jwt_token", res.data.token);
-            localStorage.setItem("showTooltip", true)
+            localStorage.setItem("showTooltip", true);
             props.setIsLoggedIn(true);
           })
           .catch((err) => {
@@ -45,6 +45,12 @@ const Register = (props) => {
     setPassword("");
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      registerUser();
+    }
+  };
+
   return (
     <div>
       <div className="header row flex-middle">
@@ -53,9 +59,11 @@ const Register = (props) => {
             Email{" "}
             <input
               type="email"
+              id="email"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
           </div>
           <br />
@@ -63,9 +71,11 @@ const Register = (props) => {
             Password{" "}
             <input
               type="password"
+              id="password"
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
           </div>
           <br />

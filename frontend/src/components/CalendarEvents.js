@@ -44,7 +44,7 @@ const CalendarEvents = (props) => {
           <span>&emsp;{event.time !== "undefined" ? event.time : ""}</span>
         </div>
         <div className="col col-center">
-          <span>{event.title}</span>
+          <span className="text-wrap">{event.title}</span>
         </div>
         <div className="col col-end">
           <div className="icon" onClick={() => deleteEvent(event.id)}>
@@ -69,6 +69,7 @@ const CalendarEvents = (props) => {
             <div
               onClick={() => props.setShowCreateEvent(true)}
               className="icon"
+              id="add-event"
             >
               add
             </div>

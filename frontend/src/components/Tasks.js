@@ -109,7 +109,11 @@ const Tasks = () => {
                 className="checkbox"
                 onChange={() => checkCompleted(task.id, !task.completed)}
               />
-              <span className={`api-text ${task.completed ? "completed" : ""}`}>
+              <span
+                className={`api-text text-wrap ${
+                  task.completed ? "completed" : ""
+                }`}
+              >
                 {task.title}
               </span>
             </div>

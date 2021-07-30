@@ -50,6 +50,12 @@ const Id = (props) => {
     localStorage.setItem("stayloggedin", true);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      loginByID();
+    }
+  };
+
   return (
     <div>
       <div className="header row flex-middle">
@@ -63,6 +69,7 @@ const Id = (props) => {
               maxLength="12"
               value={loginID}
               onChange={(e) => setLoginID(e.target.value.toUpperCase())}
+              onKeyPress={handleKeyPress}
             />
           </div>
           <br />

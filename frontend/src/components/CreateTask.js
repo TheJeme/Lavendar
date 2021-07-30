@@ -46,6 +46,7 @@ const CreateTask = (props) => {
           Title{" "}
           <input
             name="title"
+            id="task-title"
             type="text"
             maxLength={45}
             value={title}

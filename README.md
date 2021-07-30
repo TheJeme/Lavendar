@@ -39,7 +39,7 @@ You can configure and run the project locally by following the steps below.
 
 ### Start Frontend
 
-You can start backend with command `npm start` or do tests with `npm run test`
+You can start backend with command `npm start` or do tests with `npm run cypress`
 
 ### Start Backend
 
