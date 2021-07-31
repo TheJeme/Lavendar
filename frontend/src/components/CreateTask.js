@@ -27,7 +27,6 @@ const CreateTask = (props) => {
             },
           })
           .then((res) => {
-            console.log(res.data);
             props.setTasks(res.data);
           })
           .catch((err) => {
@@ -47,6 +46,7 @@ const CreateTask = (props) => {
           Title{" "}
           <input
             name="title"
+            id="task-title"
             type="text"
             maxLength={45}
             value={title}

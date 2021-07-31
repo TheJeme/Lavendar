@@ -30,7 +30,6 @@ const CalendarCreateEvent = (props) => {
             },
           })
           .then((res) => {
-            console.log(res.data);
             props.setEvents(res.data);
           })
           .catch((err) => {
@@ -51,6 +50,7 @@ const CalendarCreateEvent = (props) => {
           <input
             name="title"
             type="text"
+            id="calendar-title"
             maxLength={45}
             value={title}
             onChange={(e) => setTitle(e.target.value)}

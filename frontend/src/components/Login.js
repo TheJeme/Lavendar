@@ -26,6 +26,16 @@ const Login = (props) => {
       });
   };
 
+  const setStayLoggedIn = () => {
+    localStorage.setItem("stayloggedin", true);
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      loginUser();
+    }
+  };
+
   return (
     <div>
       <div className="header row flex-middle">
@@ -35,8 +45,10 @@ const Login = (props) => {
             <input
               type="email"
               name="email"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
           </div>
           <br />
@@ -45,14 +57,26 @@ const Login = (props) => {
             <input
               type="password"
               name="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              onKeyPress={handleKeyPress}
+            />
+          </div>
+          <br />
+          <div>
+            Stay signed in{" "}
+            <input
+              type="checkbox"
+              name="checkbox"
+              onChange={(e) => setStayLoggedIn(e.target.value)}
             />
           </div>
           <br />
           <div className="col col-center">
             <button
               className="btn"
+              id="login-btn"
               onClick={() => {
                 loginUser();
               }}

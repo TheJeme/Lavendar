@@ -18,9 +18,12 @@ const Api = () => {
           <div className="col col-start">
             <p className="api-text">
               Lavendar is a calendar and tasks app. This document describes a
-              REST API which can be used for free and for any purpose. API is
-              built mainly for Lavendar app.
+              REST API which can be used for free and for any purpose.
             </p>
+            <span className="api-method api-text">BASE URL:</span>
+            <span className="api-code api-text">
+              https://lavendar-app.herokuapp.com/
+            </span>
           </div>
         </div>
         <br />
@@ -51,18 +54,15 @@ const Api = () => {
               <tbody>
                 <tr>
                   <th>Field</th>
-                  <th>Info</th>
-                  <th>Example</th>
+                  <th>Value</th>
                 </tr>
                 <tr>
                   <th>email</th>
-                  <th></th>
-                  <th>admin@test.com</th>
+                  <th>email of user</th>
                 </tr>
                 <tr>
                   <th>password</th>
-                  <th></th>
-                  <th>123456</th>
+                  <th>password of user</th>
                 </tr>
               </tbody>
             </table>
@@ -100,18 +100,15 @@ const Api = () => {
               <tbody>
                 <tr>
                   <th>Field</th>
-                  <th>Info</th>
-                  <th>Example</th>
+                  <th>Value</th>
                 </tr>
                 <tr>
                   <th>email</th>
-                  <th>[unique]</th>
-                  <th>admin@test.com</th>
+                  <th>must be unique</th>
                 </tr>
                 <tr>
                   <th>password</th>
-                  <th>[min-length: 6]</th>
-                  <th>123456</th>
+                  <th>atleast 6 characters long</th>
                 </tr>
               </tbody>
             </table>
@@ -216,23 +213,19 @@ const Api = () => {
               <tbody>
                 <tr>
                   <th>Field</th>
-                  <th>Info</th>
-                  <th>Example</th>
+                  <th>Value</th>
                 </tr>
                 <tr>
                   <th>title</th>
-                  <th></th>
-                  <th>New event</th>
+                  <th>Title of the event</th>
                 </tr>
                 <tr>
                   <th>date</th>
-                  <th></th>
-                  <th>17.3.2021</th>
+                  <th>Day/Month/Year, e.g. "17.3.2021"</th>
                 </tr>
                 <tr>
                   <th>time</th>
-                  <th>[optional]</th>
-                  <th>12.00</th>
+                  <th>optional, e.g. "12.00"</th>
                 </tr>
               </tbody>
             </table>
@@ -337,18 +330,15 @@ const Api = () => {
               <tbody>
                 <tr>
                   <th>Field</th>
-                  <th>Info</th>
-                  <th>Example</th>
+                  <th>Value</th>
                 </tr>
                 <tr>
                   <th>title</th>
-                  <th></th>
-                  <th>New task</th>
+                  <th>Title of the task</th>
                 </tr>
                 <tr>
                   <th>completed</th>
-                  <th>[optional, default=false]</th>
-                  <th>true</th>
+                  <th>optional, default value: "false"</th>
                 </tr>
               </tbody>
             </table>
@@ -395,13 +385,11 @@ const Api = () => {
               <tbody>
                 <tr>
                   <th>Field</th>
-                  <th>Info</th>
-                  <th>Example</th>
+                  <th>Value</th>
                 </tr>
                 <tr>
                   <th>completed</th>
-                  <th></th>
-                  <th>true</th>
+                  <th>"false" or "true"</th>
                 </tr>
               </tbody>
             </table>

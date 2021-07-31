@@ -8,7 +8,9 @@ import "./App.css";
 axios.defaults.baseURL = "http://localhost:3003";
 
 window.onbeforeunload = () => {
-  localStorage.removeItem("jwt_token");
+  if (!localStorage.getItem("stayloggedin")) {
+    localStorage.removeItem("jwt_token");
+  }
 };
 
 const App = () => {
@@ -22,6 +24,7 @@ const App = () => {
 
   const logout = () => {
     localStorage.removeItem("jwt_token");
+    localStorage.removeItem("stayloggedin");
     setIsLoggedIn(false);
   };
 

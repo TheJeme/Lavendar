@@ -13,3 +13,4 @@
 27.7 - 2 - Code refactor ja Frontend UI fixejä.
 28.7 - 8 - Tasks, Css, Backend.
 29.7 - 6 - Tasks valmiiksi, css, backend rest calls, Code Refactor, Tooltip.
+30.7 - 7 - Api sivuun muutoksia, cypress testit frontendille, parannuksia frontendiin, css.
