@@ -73,7 +73,7 @@ const Id = (props) => {
       <div className="header row flex-middle">
         <div className="col col-center">
           <div className="col col-center">
-            <button className="btn" onClick={() => generateNewID()}>
+            <button className="btn" disabled={showGoodEntry} onClick={() => generateNewID()}>
               Generate new ID
             </button>
           </div>
