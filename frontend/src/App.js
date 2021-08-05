@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import Auth from "./components/Auth";
 import "./App.css";
 
-axios.defaults.baseURL = "http://localhost:3003";
+axios.defaults.baseURL = "http://localhost:3003"; // Change is not this
 
 window.onbeforeunload = () => {
   if (!localStorage.getItem("stayloggedin")) {

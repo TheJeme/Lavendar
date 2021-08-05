@@ -3,7 +3,7 @@ const usersRouter = require("express").Router();
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
-// Register user
+// Register user with unique email
 usersRouter.post("/", async (request, response) => {
   const body = request.body;
 

@@ -3,7 +3,7 @@ import React from "react";
 import { format, startOfWeek, addDays } from "date-fns";
 
 const CalendarDays = (props) => {
-  const dateFormat = "EEEE";
+  const dateFormat = "EEE";
   const days = [];
 
   let startDate = startOfWeek(props.currentMonth);

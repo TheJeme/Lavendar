@@ -16,5 +16,7 @@
 30.7 - 7 - Api sivuun muutoksia, cypress testit frontendille, parannuksia frontendiin, css.
 31.7 - 3 - Ominaisuuksia lisätty, suunniteltu testejä backendiä varten, muut testanneet appia ja kerätty palautetta.
 01.8 - 6 - Heroku deployment ja bugit korjattu, jotta app toimii herokussa, deploymaaminen helpompaa ja nopeampaa jatkossa, backend testit valmiiksi.
-
-YHTEENSÄ: 81
+02.8 - 2 - Palautetta kerätty ja appia testattu eri laitteilla.
+05.8 - 6 - Mobiililaitteille optimointia, koodia muokattu selkeämmäksi, kerätystä palautteesta tehdyt muutokset.
+===
+YHTEENSÄ: 90

@@ -3,7 +3,7 @@ const Task = require("../models/task");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
-// Delete task
+// Delete task by id
 taskRouter.delete("/:id", async (request, response) => {
   const token = jwt.verify(request.token, process.env.SECRET);
 
@@ -51,9 +51,7 @@ taskRouter.post("/", async (request, response) => {
   const user = await User.findById(token.id);
 
   if (!body.title)
-    return response
-      .status(400)
-      .json({ error: "title is missing" });
+    return response.status(400).json({ error: "title is missing" });
 
   const task = new Task({
     title: body.title,

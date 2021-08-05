@@ -3,7 +3,7 @@ const Event = require("../models/event");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
-// Delete event
+// Delete event by id
 eventRouter.delete("/:id", async (request, response) => {
   const token = jwt.verify(request.token, process.env.SECRET);
 
@@ -51,9 +51,8 @@ eventRouter.post("/", async (request, response) => {
   response.json(savedEvent.toJSON());
 });
 
-// Get events
+// Get all events from user
 eventRouter.get("/", async (request, response) => {
-  const body = request.body;
   const token = jwt.verify(request.token, process.env.SECRET);
 
   if (!token.id)

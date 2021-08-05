@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 import CalendarCreateEvent from "./CalendarCreateEvent";
 
 const CalendarEvents = (props) => {
+  const [showCreateEvent, setShowCreateEvent] = useState(false);
+
   const deleteEvent = (id) => {
     axios
       .delete(`/api/events/${id}`, {
@@ -58,16 +60,16 @@ const CalendarEvents = (props) => {
     <>
       {eventObjects}
       <div className="header row flex-middle">
-        {props.showCreateEvent ? (
+        {showCreateEvent ? (
           <CalendarCreateEvent
-            setShowCreateEvent={props.setShowCreateEvent}
+            setShowCreateEvent={setShowCreateEvent}
             selectedDateFormated={selectedDateFormated}
             setEvents={props.setEvents}
           />
         ) : (
           <div className="col col-center">
             <div
-              onClick={() => props.setShowCreateEvent(true)}
+              onClick={() => setShowCreateEvent(true)}
               className="icon"
               id="add-event"
             >

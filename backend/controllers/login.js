@@ -3,7 +3,7 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-// Log in
+// Login user
 loginRouter.post("/", async (request, response) => {
   const body = request.body;
   const user = await User.findOne({ email: body.email });

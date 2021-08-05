@@ -13,7 +13,6 @@ const Calendar = () => {
 
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [showCreateEvent, setShowCreateEvent] = useState(false);
 
   useEffect(() => {
     axios
@@ -61,8 +60,6 @@ const Calendar = () => {
         events={events}
         setEvents={setEvents}
         selectedDate={selectedDate}
-        showCreateEvent={showCreateEvent}
-        setShowCreateEvent={setShowCreateEvent}
       />
     </div>
   );

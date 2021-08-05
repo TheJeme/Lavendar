@@ -136,15 +136,6 @@ main {
   border-top: 1px solid var(--border-color);
 }
 
-.tasks {
-  padding: 1.5em 0;
-  border-bottom: 0px;
-}
-
-.completed {
-  text-decoration: line-through;
-}
-
 .calendar .header .icon {
   cursor: pointer;
   transition: 0.15s ease-out;
@@ -348,6 +339,7 @@ input:-webkit-autofill {
   margin-bottom: 1em;
   font-size: 1.3em;
 }
+
 th,
 td {
   border-bottom: 1px solid #ddd;
@@ -359,6 +351,15 @@ td {
   height: 25px;
   width: 25px;
   background-color: #eee;
+}
+
+.tasks {
+  padding: 1.5em 0;
+  border-bottom: 0px;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 .text-wrap {
