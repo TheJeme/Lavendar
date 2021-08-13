@@ -63,6 +63,7 @@ const CalendarCells = (props) => {
       );
       day = addDays(day, 1);
     }
+
     rows.push(
       <div className="row" key={day}>
         {days}
